@@ -9,13 +9,12 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const router = useRouter();
-//   const { showNotification } = useNotification();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-    //   showNotification("Passwords do not match", "error");
+      console.log("Passwords do not match", "error");
       return;
     }
 
@@ -32,13 +31,13 @@ export default function Register() {
         throw new Error(data.error || "Registration failed");
       }
 
-    //   showNotification("Registration successful! Please log in.", "success");
+      console.log("Registration successful! Please log in.", "success");
       router.push("/login");
     } catch (error) {
-    //   showNotification(
-    //     error instanceof Error ? error.message : "Registration failed",
-    //     "error"
-    //   );
+      console.log(
+        error instanceof Error ? error.message : "Registration failed",
+        "error"
+      );
     }
   };
 
