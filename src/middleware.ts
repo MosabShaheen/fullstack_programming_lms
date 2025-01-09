@@ -33,7 +33,7 @@ export default withAuth(
 
         // Admin routes require admin role
         if (pathname.startsWith("/lms")) {
-          return token?.role === "user";
+          return token?.role === "student";
         }
 
         // All other routes require authentication
