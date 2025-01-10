@@ -16,9 +16,9 @@ export default function Login(){
     });
 
     if (result?.error) {
-      console.log(result.error, "error");
+      alert(result.error,);
     } else {
-      console.log("Login successful!", "success");
+      alert("Login successful! success");
       router.push("/lms");
     }
   };

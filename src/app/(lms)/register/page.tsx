@@ -14,7 +14,7 @@ export default function Register() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      console.log("Passwords do not match", "error");
+      alert("Passwords do not match error");
       return;
     }
 
@@ -31,12 +31,11 @@ export default function Register() {
         throw new Error(data.error || "Registration failed");
       }
 
-      console.log("Registration successful! Please log in.", "success");
+      alert("Registration successful! Please log in. success");
       router.push("/login");
     } catch (error) {
-      console.log(
-        error instanceof Error ? error.message : "Registration failed",
-        "error"
+      alert(
+        error instanceof Error ? error.message : "Registration failed error"
       );
     }
   };
