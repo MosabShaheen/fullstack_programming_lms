@@ -35,7 +35,7 @@ const VideoGallery = () => {
         <div className="video-grid">
           {videos.map((video) => (
             <div key={video.key} className="video-item">
-              <video controls width="300" src={video.url} />
+              <video controls controlsList="nodownload" onContextMenu={(e) => e.preventDefault()} width="300" src={video.url} />
               <p>{video.key}</p>
             </div>
           ))}
